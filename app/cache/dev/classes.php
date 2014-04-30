@@ -4933,7 +4933,8 @@ class StreamHandler extends AbstractProcessingHandler
 protected $stream;
 protected $url;
 private $errorMessage;
-public function __construct($stream, $level = Logger::DEBUG, $bubble = true)
+protected $filePermission;
+public function __construct($stream, $level = Logger::DEBUG, $bubble = true, $filePermission = null)
 {
 parent::__construct($level, $bubble);
 if (is_resource($stream)) {
@@ -4941,6 +4942,7 @@ $this->stream = $stream;
 } else {
 $this->url = $stream;
 }
+$this->filePermission = $filePermission;
 }
 public function close()
 {
@@ -4951,13 +4953,16 @@ $this->stream = null;
 }
 protected function write(array $record)
 {
-if (null === $this->stream) {
+if (!is_resource($this->stream)) {
 if (!$this->url) {
 throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().');
 }
 $this->errorMessage = null;
 set_error_handler(array($this,'customErrorHandler'));
 $this->stream = fopen($this->url,'a');
+if ($this->filePermission !== null) {
+@chmod($this->url, $this->filePermission);
+}
 restore_error_handler();
 if (!is_resource($this->stream)) {
 $this->stream = null;

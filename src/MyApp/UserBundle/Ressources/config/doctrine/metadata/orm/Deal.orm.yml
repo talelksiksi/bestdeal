@@ -1,0 +1,106 @@
+Deal:
+    type: entity
+    table: deal
+    indexes:
+        FK_Association5:
+            columns:
+                - IdUser
+    id:
+        iddeal:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: IdDeal
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelle:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Libelle
+        typedeal:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: TypeDeal
+        categorie:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Categorie
+        prixinitial:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            default: '0'
+            column: PrixInitial
+        prixpromotionnel:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            comment: ''
+            default: '0'
+            column: PrixPromotionnel
+        datedebut:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: DateDebut
+        datefin:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: DateFin
+        image:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Image
+        quantite:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Quantite
+        descriptif:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Descriptif
+        statut:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Statut
+    manyToOne:
+        iduser:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdUser:
+                    referencedColumnName: IdUser
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

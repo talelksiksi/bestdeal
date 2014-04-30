@@ -1,0 +1,104 @@
+User:
+    type: entity
+    table: user
+    id:
+        iduser:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: IdUser
+            generator:
+                strategy: IDENTITY
+    fields:
+        login:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Login
+        motdepasse:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: MotDePasse
+        role:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Role
+        nom:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Nom
+        prenom:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Prenom
+        sexe:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Sexe
+        datedenaissance:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: DateDeNaissance
+        telephone:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Telephone
+        societe:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Societe
+        adresse:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Adresse
+        descriptif:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Descriptif
+        logo:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Logo
+        statut:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Statut
+    lifecycleCallbacks: {  }

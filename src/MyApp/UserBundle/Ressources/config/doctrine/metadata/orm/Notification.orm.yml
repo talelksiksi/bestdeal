@@ -1,0 +1,74 @@
+Notification:
+    type: entity
+    table: notification
+    indexes:
+        FK_Association7:
+            columns:
+                - IdFromUser
+        FK_Association8:
+            columns:
+                - IdToUser
+        FK_Association9:
+            columns:
+                - IdDeal
+    id:
+        idnotification:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: IdNotification
+            generator:
+                strategy: IDENTITY
+    fields:
+        datenotification:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: DateNotification
+        typenotification:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: TypeNotification
+        message:
+            type: string
+            nullable: true
+            length: 254
+            fixed: false
+            comment: ''
+            column: Message
+    manyToOne:
+        iddeal:
+            targetEntity: Deal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdDeal:
+                    referencedColumnName: IdDeal
+            orphanRemoval: false
+        idfromuser:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdFromUser:
+                    referencedColumnName: IdUser
+            orphanRemoval: false
+        idtouser:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdToUser:
+                    referencedColumnName: IdUser
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

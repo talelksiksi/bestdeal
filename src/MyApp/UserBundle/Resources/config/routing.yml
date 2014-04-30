@@ -1,0 +1,29 @@
+user_homepage:
+    pattern:  /temp
+    defaults: { _controller: UserBundle:default:index }
+
+blog_accueil:
+    pattern: /{page}
+    defaults: {_controller: UserBundle:Blog:index, page: 1 }
+    requirements:
+        page:  \d*
+
+blog_voir:
+    pattern: /article/{id}
+    defaults: { _controller: UserBundle:Blog:voir}
+    requirements:
+        id: \d+
+        
+blog_ajouter:
+    path:      /ajouter
+    defaults:  { _controller: UserBundle:Blog:ajouter }
+blog_modifier:
+    path:      /modifier/{id}
+    defaults:  { _controller: UserBundle:Blog:modifier }
+    requirements:
+        id:  \d+
+blog_supprimer:
+    path:      /supprimer/{id}
+    defaults:  { _controller: UserBundle:Blog:supprimer }
+    requirements:
+        id:  \d+
