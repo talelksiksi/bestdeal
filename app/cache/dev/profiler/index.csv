@@ -94,3 +94,9 @@ e464d1,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/bootstrap.js,1398
 15bfe0,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/bootstrap.js,1398867331,
 df0b0c,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/index.html.twig,1398867368,080a09
 080a09,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/index.html.twig,1398867368,
+b5fac8,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/,1398880995,
+b6b0a3,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/temp,1398881003,
+61ae05,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/bootstrap.js,1398881004,a05bf2
+a05bf2,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/bootstrap.js,1398881004,
+66f52a,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/jquery-1.10.2.js,1398881004,cc0f94
+cc0f94,::1,GET,http://localhost/BestDealWeb/web/app_dev.php/js/jquery-1.10.2.js,1398881004,
