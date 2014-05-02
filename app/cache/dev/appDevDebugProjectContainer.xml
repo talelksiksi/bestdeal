@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="UserBundle">MyApp\UserBundle\UserBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="AdminAdminBundle">Admin\AdminBundle\AdminAdminBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2941,6 +2942,10 @@
       <call method="addPath">
         <argument>C:\wamp\www\BestDealWeb\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\BestDealWeb\src\Admin\AdminBundle/Resources/views</argument>
+        <argument>AdminAdmin</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\BestDealWeb\src\Acme\DemoBundle/Resources/views</argument>

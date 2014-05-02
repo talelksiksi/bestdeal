@@ -1,3 +1,11 @@
 admin_admin_homepage:
-    pattern:  /hello/{name}
+    pattern:  /Admin/index
     defaults: { _controller: AdminAdminBundle:Default:index }
+    
+    
+    
+    
+    
+admin_admin_morris:
+    pattern:  /Admin/morris
+    defaults: { _controller: AdminAdminBundle:Default:morris }
