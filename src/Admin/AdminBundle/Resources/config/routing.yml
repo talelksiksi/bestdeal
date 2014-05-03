@@ -20,7 +20,7 @@ admin_admin_prest:
     pattern:  /Admin/prestataire
     defaults: { _controller: AdminAdminBundle:Default:prestataire }
 
-admin_admin_prest:
+admin_admin_deal:
     pattern:  /Admin/deal
     defaults: { _controller: AdminAdminBundle:Default:deal }
     
