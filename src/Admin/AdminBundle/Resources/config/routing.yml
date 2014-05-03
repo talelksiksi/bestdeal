@@ -15,3 +15,12 @@ admin_admin_morris:
 admin_admin_client:
     pattern:  /Admin/client
     defaults: { _controller: AdminAdminBundle:Default:client }
+    
+admin_admin_prest:
+    pattern:  /Admin/prestataire
+    defaults: { _controller: AdminAdminBundle:Default:prestataire }
+
+admin_admin_prest:
+    pattern:  /Admin/deal
+    defaults: { _controller: AdminAdminBundle:Default:deal }
+    

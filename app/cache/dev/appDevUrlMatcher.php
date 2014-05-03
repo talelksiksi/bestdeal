@@ -151,6 +151,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::clientAction',  '_route' => 'admin_admin_client',);
             }
 
+            // admin_admin_prest
+            if ($pathinfo === '/Admin/deal') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::dealAction',  '_route' => 'admin_admin_prest',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

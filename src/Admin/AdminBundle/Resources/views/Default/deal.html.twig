@@ -1,0 +1,57 @@
+{%extends "AdminAdminBundle::layout.html.twig"%}
+{% block pagewrapper %}
+
+    <div id="pagewrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Liste Deals</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            DataTables Advanced Tables
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Libelle</th>
+                                            <th>Type</th>
+                                            <th>Categorie</th>
+                                          
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       {% for deal in deals %}
+                                        <tr>
+                                        <td>{{deal.libelle}}</td>
+                                        <td>{{deal.typedeal}}</td>
+                                        <td>{{deal.categorie}}</td>
+                                        
+                                      
+
+                                        </tr>
+                                      {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                           
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').dataTable();
+    });
+    </script>
+
+    
+    
+    
+{% endblock %}
+    

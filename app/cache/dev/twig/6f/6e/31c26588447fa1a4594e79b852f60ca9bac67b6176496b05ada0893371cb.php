@@ -85,7 +85,7 @@ class __TwigTemplate_6f6e31c26588447fa1a4594e79b852f60ca9bac67b6176496b05ada0893
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href=\"index.html\"><i class=\"fa fa-dashboard fa-fw\"></i> Home</a>
+                                <a href=\"index\"><i class=\"fa fa-dashboard fa-fw\"></i> Home</a>
                             </li>
                             <li>
                                 <a href=\"#\"><i class=\"fa fa-bar-chart-o fa-fw\"></i> Statistiques<span class=\"fa arrow\"></span></a>
@@ -100,14 +100,14 @@ class __TwigTemplate_6f6e31c26588447fa1a4594e79b852f60ca9bac67b6176496b05ada0893
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href=\"clients.html\"><i class=\"fa fa-table fa-fw\"></i> Liste Clients</a>
+                                <a href=\"client\"><i class=\"fa fa-table fa-fw\"></i> Liste Clients</a>
                             </li>
 
                             <li>
                                 <a href=\"#\"><i class=\"fa fa-table fa-fw\"></i> Prestataires<span class=\"fa arrow\"></span></a>
                                 <ul class=\"nav nav-second-level\">
                                     <li>
-                                        <a href=\"prestataires.html\"> Liste Prestataires</a>
+                                        <a href=\"prestataire\"> Liste Prestataires</a>
                                     </li>
                                     <li>
                                         <a href=\"validationprestataires.html\"> Validation Prestataires</a>
@@ -119,7 +119,7 @@ class __TwigTemplate_6f6e31c26588447fa1a4594e79b852f60ca9bac67b6176496b05ada0893
                                 <a href=\"#\"><i class=\"fa fa-table fa-fw\"></i> Deals<span class=\"fa arrow\"></span></a>
                                 <ul class=\"nav nav-second-level\">
                                     <li>
-                                        <a href=\"deals.html\"> Liste Deals</a>
+                                        <a href=\"deal\"> Liste Deals</a>
                                     </li>
                                     <li>
                                         <a href=\"validationdeals.html\"> Valider Deal</a>
@@ -232,6 +232,6 @@ class __TwigTemplate_6f6e31c26588447fa1a4594e79b852f60ca9bac67b6176496b05ada0893
 
     public function getDebugInfo()
     {
-        return array (  216 => 136,  207 => 155,  201 => 152,  195 => 149,  191 => 148,  185 => 145,  181 => 144,  177 => 143,  171 => 139,  169 => 136,  49 => 19,  43 => 16,  37 => 13,  33 => 12,  20 => 1,  31 => 3,  28 => 2,);
+        return array (  216 => 136,  207 => 155,  201 => 152,  195 => 149,  191 => 148,  185 => 145,  181 => 144,  177 => 143,  171 => 139,  169 => 136,  49 => 19,  43 => 16,  37 => 13,  33 => 12,  20 => 1,);
     }
 }
