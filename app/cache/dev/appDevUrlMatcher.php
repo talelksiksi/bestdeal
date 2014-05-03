@@ -311,8 +311,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         not_fos_user_change_password:
 
         // user_homepage
-        if ($pathinfo === '/temp') {
-            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\defaultController::indexAction',  '_route' => 'user_homepage',);
+        if ($pathinfo === '/home') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);
+        }
+
+        // user_test
+        if ($pathinfo === '/te') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::testAction',  '_route' => 'user_test',);
+        }
+
+        // user_contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::contactAction',  '_route' => 'user_contact',);
+        }
+
+        // user_recherche
+        if ($pathinfo === '/recherche') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::rechercheAction',  '_route' => 'user_recherche',);
+        }
+
+        // user_about
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::aboutAction',  '_route' => 'user_about',);
+        }
+
+        // user_connexion
+        if ($pathinfo === '/connexion') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'user_connexion',);
         }
 
         // blog_accueil

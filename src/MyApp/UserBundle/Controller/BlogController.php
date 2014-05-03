@@ -8,10 +8,19 @@ class BlogController extends Controller
 {
   public function indexAction()
   {
-   return $this->render('UserBundle:Blog:index.html.twig', array(
+   return $this->render('UserBundle:BestDeal:index.html.twig', array(
   'articles' => array()
 ));
   }
+  
+   public function contactAction()
+  {
+   return $this->render('UserBundle:blog:contact.html.twig', array(
+  'articles' => array()
+));
+  }
+  
+ 
   public function voirAction($id)
   {
      // On récupère la requête

@@ -1,6 +1,26 @@
 user_homepage:
-    pattern:  /temp
-    defaults: { _controller: UserBundle:default:index }
+    pattern:  /home
+    defaults: { _controller: UserBundle:Default:index }
+    
+user_test:
+    pattern:  /te
+    defaults: { _controller: UserBundle:Default:test }
+    
+user_contact:
+    pattern:  /contact
+    defaults: { _controller: UserBundle:Default:contact }    
+    
+user_recherche:
+    pattern:  /recherche
+    defaults: { _controller: UserBundle:Default:recherche }
+    
+user_about:
+    pattern:  /about
+    defaults: { _controller: UserBundle:Default:about } 
+    
+user_connexion:
+    pattern:  /connexion
+    defaults: { _controller: UserBundle:Default:connexion }     
 
 blog_accueil:
     pattern: /{page}
