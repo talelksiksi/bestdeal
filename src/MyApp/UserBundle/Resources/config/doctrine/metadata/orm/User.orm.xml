@@ -10,11 +10,12 @@
     <field name="nom" type="string" column="Nom" length="254" nullable="true"/>
     <field name="prenom" type="string" column="Prenom" length="254" nullable="true"/>
     <field name="sexe" type="string" column="Sexe" length="254" nullable="true"/>
-    <field name="datedenaissance" type="datetime" column="DateDeNaissance" nullable="true"/>
+    <field name="datedenaissance" type="string" column="DateDeNaissance" length="100" nullable="true"/>
     <field name="telephone" type="integer" column="Telephone" nullable="true"/>
     <field name="societe" type="string" column="Societe" length="254" nullable="true"/>
     <field name="adresse" type="string" column="Adresse" length="254" nullable="true"/>
     <field name="descriptif" type="string" column="Descriptif" length="254" nullable="true"/>
     <field name="logo" type="string" column="Logo" length="254" nullable="true"/>
+    <field name="statut" type="integer" column="Statut" nullable="true"/>
   </entity>
 </doctrine-mapping>

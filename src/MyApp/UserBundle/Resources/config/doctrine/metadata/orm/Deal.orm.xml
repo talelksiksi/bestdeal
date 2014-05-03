@@ -10,13 +10,14 @@
     <field name="libelle" type="string" column="Libelle" length="254" nullable="true"/>
     <field name="typedeal" type="string" column="TypeDeal" length="254" nullable="true"/>
     <field name="categorie" type="string" column="Categorie" length="254" nullable="true"/>
-    <field name="prixinitial" type="decimal" column="PrixInitial" precision="10" scale="0" nullable="true"/>
-    <field name="prixpromotionnel" type="decimal" column="PrixPromotionnel" precision="10" scale="0" nullable="true"/>
-    <field name="datedebut" type="datetime" column="DateDebut" nullable="true"/>
-    <field name="datefin" type="datetime" column="DateFin" nullable="true"/>
+    <field name="prixinitial" type="float" column="PrixInitial" precision="10" scale="0" nullable="true"/>
+    <field name="prixpromotionnel" type="float" column="PrixPromotionnel" precision="10" scale="0" nullable="true"/>
+    <field name="datedebut" type="string" column="DateDebut" length="100" nullable="true"/>
+    <field name="datefin" type="string" column="DateFin" length="100" nullable="true"/>
     <field name="image" type="string" column="Image" length="254" nullable="true"/>
     <field name="quantite" type="integer" column="Quantite" nullable="true"/>
     <field name="descriptif" type="string" column="Descriptif" length="254" nullable="true"/>
+    <field name="statut" type="integer" column="Statut" nullable="true"/>
     <many-to-one field="iduser" target-entity="User">
       <join-columns>
         <join-column name="IdUser" referenced-column-name="IdUser"/>

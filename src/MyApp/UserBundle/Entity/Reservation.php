@@ -22,9 +22,9 @@ class Reservation
     private $idreservation;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="DateReservation", type="datetime", nullable=true)
+     * @ORM\Column(name="DateReservation", type="string", length=100, nullable=true)
      */
     private $datereservation;
 
@@ -36,16 +36,6 @@ class Reservation
     private $quantite;
 
     /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IdUser", referencedColumnName="IdUser")
-     * })
-     */
-    private $iduser;
-
-    /**
      * @var \Deal
      *
      * @ORM\ManyToOne(targetEntity="Deal")
@@ -54,6 +44,16 @@ class Reservation
      * })
      */
     private $iddeal;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdUser", referencedColumnName="IdUser")
+     * })
+     */
+    private $iduser;
 
 
 
@@ -70,7 +70,7 @@ class Reservation
     /**
      * Set datereservation
      *
-     * @param \DateTime $datereservation
+     * @param string $datereservation
      * @return Reservation
      */
     public function setDatereservation($datereservation)
@@ -83,7 +83,7 @@ class Reservation
     /**
      * Get datereservation
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getDatereservation()
     {
@@ -114,29 +114,6 @@ class Reservation
     }
 
     /**
-     * Set iduser
-     *
-     * @param \MyApp\UserBundle\Entity\User $iduser
-     * @return Reservation
-     */
-    public function setIduser(\MyApp\UserBundle\Entity\User $iduser = null)
-    {
-        $this->iduser = $iduser;
-
-        return $this;
-    }
-
-    /**
-     * Get iduser
-     *
-     * @return \MyApp\UserBundle\Entity\User 
-     */
-    public function getIduser()
-    {
-        return $this->iduser;
-    }
-
-    /**
      * Set iddeal
      *
      * @param \MyApp\UserBundle\Entity\Deal $iddeal
@@ -157,5 +134,28 @@ class Reservation
     public function getIddeal()
     {
         return $this->iddeal;
+    }
+
+    /**
+     * Set iduser
+     *
+     * @param \MyApp\UserBundle\Entity\User $iduser
+     * @return Reservation
+     */
+    public function setIduser(\MyApp\UserBundle\Entity\User $iduser = null)
+    {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return \MyApp\UserBundle\Entity\User 
+     */
+    public function getIduser()
+    {
+        return $this->iduser;
     }
 }

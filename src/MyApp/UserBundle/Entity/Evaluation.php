@@ -36,16 +36,6 @@ class Evaluation
     private $note;
 
     /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IdUser", referencedColumnName="IdUser")
-     * })
-     */
-    private $iduser;
-
-    /**
      * @var \Deal
      *
      * @ORM\ManyToOne(targetEntity="Deal")
@@ -54,6 +44,16 @@ class Evaluation
      * })
      */
     private $iddeal;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdUser", referencedColumnName="IdUser")
+     * })
+     */
+    private $iduser;
 
 
 
@@ -114,29 +114,6 @@ class Evaluation
     }
 
     /**
-     * Set iduser
-     *
-     * @param \MyApp\UserBundle\Entity\User $iduser
-     * @return Evaluation
-     */
-    public function setIduser(\MyApp\UserBundle\Entity\User $iduser = null)
-    {
-        $this->iduser = $iduser;
-
-        return $this;
-    }
-
-    /**
-     * Get iduser
-     *
-     * @return \MyApp\UserBundle\Entity\User 
-     */
-    public function getIduser()
-    {
-        return $this->iduser;
-    }
-
-    /**
      * Set iddeal
      *
      * @param \MyApp\UserBundle\Entity\Deal $iddeal
@@ -157,5 +134,28 @@ class Evaluation
     public function getIddeal()
     {
         return $this->iddeal;
+    }
+
+    /**
+     * Set iduser
+     *
+     * @param \MyApp\UserBundle\Entity\User $iduser
+     * @return Evaluation
+     */
+    public function setIduser(\MyApp\UserBundle\Entity\User $iduser = null)
+    {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return \MyApp\UserBundle\Entity\User 
+     */
+    public function getIduser()
+    {
+        return $this->iduser;
     }
 }

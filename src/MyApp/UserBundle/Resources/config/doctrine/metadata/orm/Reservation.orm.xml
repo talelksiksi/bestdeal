@@ -8,16 +8,16 @@
     <id name="id" type="integer" column="IdReservation">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="datereservation" type="datetime" column="DateReservation" nullable="true"/>
+    <field name="datereservation" type="string" column="DateReservation" length="100" nullable="true"/>
     <field name="quantite" type="integer" column="Quantite" nullable="true"/>
-    <many-to-one field="iddeal" target-entity="Deal">
-      <join-columns>
-        <join-column name="IdDeal" referenced-column-name="IdDeal"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="iduser" target-entity="User">
       <join-columns>
         <join-column name="IdUser" referenced-column-name="IdUser"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="iddeal" target-entity="Deal">
+      <join-columns>
+        <join-column name="IdDeal" referenced-column-name="IdDeal"/>
       </join-columns>
     </many-to-one>
   </entity>

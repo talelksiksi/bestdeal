@@ -7,8 +7,8 @@
     <id name="id" type="integer" column="IdStatistique">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="datedebut" type="datetime" column="DateDebut" nullable="true"/>
-    <field name="datefin" type="datetime" column="DateFin" nullable="true"/>
+    <field name="datedebut" type="string" column="DateDebut" length="100" nullable="true"/>
+    <field name="datefin" type="string" column="DateFin" length="100" nullable="true"/>
     <field name="categorie" type="string" column="Categorie" length="254" nullable="true"/>
     <many-to-one field="iduser" target-entity="User">
       <join-columns>

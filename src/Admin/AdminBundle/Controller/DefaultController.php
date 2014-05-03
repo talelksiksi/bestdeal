@@ -35,7 +35,7 @@ class DefaultController extends Controller
     public function dealAction()
     {
        $em= $this->getDoctrine()->getManager();
-        $deal=$em->getRepository("UserBundle:Deal")->findAll();
+        $deal=$em->getRepository("UserBundle:Deal")->findBy(array('status' => '1'));
         return $this->render("AdminAdminBundle:Default:deal.html.twig",array("deals"=>$deal));
     }
 }
