@@ -64,9 +64,9 @@ class User
     private $sexe;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="DateDeNaissance", type="string", length=100, nullable=true)
+     * @ORM\Column(name="DateDeNaissance", type="datetime", nullable=true)
      */
     private $datedenaissance;
 
@@ -104,13 +104,6 @@ class User
      * @ORM\Column(name="Logo", type="string", length=254, nullable=true)
      */
     private $logo;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Statut", type="integer", nullable=true)
-     */
-    private $statut;
 
 
 
@@ -265,7 +258,7 @@ class User
     /**
      * Set datedenaissance
      *
-     * @param string $datedenaissance
+     * @param \DateTime $datedenaissance
      * @return User
      */
     public function setDatedenaissance($datedenaissance)
@@ -278,7 +271,7 @@ class User
     /**
      * Get datedenaissance
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatedenaissance()
     {
@@ -398,28 +391,5 @@ class User
     public function getLogo()
     {
         return $this->logo;
-    }
-
-    /**
-     * Set statut
-     *
-     * @param integer $statut
-     * @return User
-     */
-    public function setStatut($statut)
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    /**
-     * Get statut
-     *
-     * @return integer 
-     */
-    public function getStatut()
-    {
-        return $this->statut;
     }
 }

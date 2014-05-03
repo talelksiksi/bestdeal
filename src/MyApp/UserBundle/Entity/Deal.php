@@ -43,30 +43,30 @@ class Deal
     private $categorie;
 
     /**
-     * @var float
+     * @var string
      *
-     * @ORM\Column(name="PrixInitial", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="PrixInitial", type="decimal", precision=10, scale=0, nullable=true)
      */
-    private $prixinitial = '0';
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="PrixPromotionnel", type="float", precision=10, scale=0, nullable=true)
-     */
-    private $prixpromotionnel = '0';
+    private $prixinitial;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="DateDebut", type="string", length=100, nullable=true)
+     * @ORM\Column(name="PrixPromotionnel", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $prixpromotionnel;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateDebut", type="datetime", nullable=true)
      */
     private $datedebut;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="DateFin", type="string", length=100, nullable=true)
+     * @ORM\Column(name="DateFin", type="datetime", nullable=true)
      */
     private $datefin;
 
@@ -90,13 +90,6 @@ class Deal
      * @ORM\Column(name="Descriptif", type="string", length=254, nullable=true)
      */
     private $descriptif;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Statut", type="integer", nullable=true)
-     */
-    private $statut;
 
     /**
      * @var \User
@@ -192,7 +185,7 @@ class Deal
     /**
      * Set prixinitial
      *
-     * @param float $prixinitial
+     * @param string $prixinitial
      * @return Deal
      */
     public function setPrixinitial($prixinitial)
@@ -205,7 +198,7 @@ class Deal
     /**
      * Get prixinitial
      *
-     * @return float 
+     * @return string 
      */
     public function getPrixinitial()
     {
@@ -215,7 +208,7 @@ class Deal
     /**
      * Set prixpromotionnel
      *
-     * @param float $prixpromotionnel
+     * @param string $prixpromotionnel
      * @return Deal
      */
     public function setPrixpromotionnel($prixpromotionnel)
@@ -228,7 +221,7 @@ class Deal
     /**
      * Get prixpromotionnel
      *
-     * @return float 
+     * @return string 
      */
     public function getPrixpromotionnel()
     {
@@ -238,7 +231,7 @@ class Deal
     /**
      * Set datedebut
      *
-     * @param string $datedebut
+     * @param \DateTime $datedebut
      * @return Deal
      */
     public function setDatedebut($datedebut)
@@ -251,7 +244,7 @@ class Deal
     /**
      * Get datedebut
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatedebut()
     {
@@ -261,7 +254,7 @@ class Deal
     /**
      * Set datefin
      *
-     * @param string $datefin
+     * @param \DateTime $datefin
      * @return Deal
      */
     public function setDatefin($datefin)
@@ -274,7 +267,7 @@ class Deal
     /**
      * Get datefin
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatefin()
     {
@@ -348,29 +341,6 @@ class Deal
     public function getDescriptif()
     {
         return $this->descriptif;
-    }
-
-    /**
-     * Set statut
-     *
-     * @param integer $statut
-     * @return Deal
-     */
-    public function setStatut($statut)
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    /**
-     * Get statut
-     *
-     * @return integer 
-     */
-    public function getStatut()
-    {
-        return $this->statut;
     }
 
     /**

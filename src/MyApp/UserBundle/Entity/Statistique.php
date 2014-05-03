@@ -22,16 +22,16 @@ class Statistique
     private $idstatistique;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="DateDebut", type="string", length=100, nullable=true)
+     * @ORM\Column(name="DateDebut", type="datetime", nullable=true)
      */
     private $datedebut;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="DateFin", type="string", length=100, nullable=true)
+     * @ORM\Column(name="DateFin", type="datetime", nullable=true)
      */
     private $datefin;
 
@@ -67,7 +67,7 @@ class Statistique
     /**
      * Set datedebut
      *
-     * @param string $datedebut
+     * @param \DateTime $datedebut
      * @return Statistique
      */
     public function setDatedebut($datedebut)
@@ -80,7 +80,7 @@ class Statistique
     /**
      * Get datedebut
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatedebut()
     {
@@ -90,7 +90,7 @@ class Statistique
     /**
      * Set datefin
      *
-     * @param string $datefin
+     * @param \DateTime $datefin
      * @return Statistique
      */
     public function setDatefin($datefin)
@@ -103,7 +103,7 @@ class Statistique
     /**
      * Get datefin
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getDatefin()
     {
