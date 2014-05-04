@@ -26,6 +26,7 @@
                                             <th>Login</th>
                                             <th>Role</th>
                                             <th>Sexe</th>
+                                            <th>Sexe</th>
                                            
                                         </tr>
                                     </thead>
@@ -37,7 +38,7 @@
                                         <td>{{client.login}}</td>
                                         <td>{{client.role}}</td>
                                         <td>{{client.sexe}}</td>
-                                      
+                                        <td><a href="{{path('client_supprimer',{id:client.iduser})}}" class="btn btn-outline btn-danger btn-block">Supprimer ce client</a></td>
 
                                         </tr>
                                       {% endfor %}

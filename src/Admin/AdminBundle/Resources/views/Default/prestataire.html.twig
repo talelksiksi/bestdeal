@@ -26,6 +26,7 @@
                                             <th>Login</th>
                                             <th>Role</th>
                                             <th>Sexe</th>
+                                            <th>Sexe</th>
                                            
                                         </tr>
                                     </thead>
@@ -37,7 +38,7 @@
                                         <td>{{prest.login}}</td>
                                         <td>{{prest.role}}</td>
                                         <td>{{prest.sexe}}</td>
-                                      
+                           <td><a href="{{path('prest_supprimer',{id:prest.iduser})}}" class="btn btn-outline btn-danger btn-block">Supprimer ce prestataire</a></td>            
 
                                         </tr>
                                       {% endfor %}

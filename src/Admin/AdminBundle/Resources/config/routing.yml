@@ -10,8 +10,6 @@ admin_admin_morris:
     pattern:  /Admin/morris
     defaults: { _controller: AdminAdminBundle:Default:morris }
 
-
-
 admin_admin_client:
     pattern:  /Admin/client
     defaults: { _controller: AdminAdminBundle:Default:client }
@@ -24,3 +22,23 @@ admin_admin_deal:
     pattern:  /Admin/deal
     defaults: { _controller: AdminAdminBundle:Default:deal }
     
+admin_admin_deal_a_Valider:
+    pattern:  /Admin/deal_a_Valider
+    defaults: { _controller: AdminAdminBundle:Default:deal_a_Valider }
+
+admin_admin_ValiderD:
+    pattern:  /Admin/ValiderD/{id}
+    defaults: { _controller: AdminAdminBundle:Default:ValiderD }
+    
+
+client_supprimer:
+    pattern:  /Admin/supprimerC/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerC }
+    
+prest_supprimer:
+    pattern:  /Admin/supprimerP/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerP }
+    
+deal_supprimer:
+    pattern:  /Admin/supprimerD/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerD }    

@@ -35,7 +35,8 @@
                                         <td>{{deal.libelle}}</td>
                                         <td>{{deal.typedeal}}</td>
                                         <td>{{deal.categorie}}</td>
-           <td><a href="{{path('deal_supprimer',{id:deal.iddeal})}}" class="btn btn-outline btn-danger btn-block">Supprimer ce Deal</a></td>                             
+           <td><a href="{{path('deal_supprimer',{id:deal.iddeal})}}" class="btn btn-outline btn-danger btn-block">Supprimer ce Deal</a>
+           <a href="{{path('admin_admin_ValiderD',{id:deal.iddeal})}}" class="btn btn-outline btn-success btn-block">Valider ce deal</a></td>                             
                                       
 
                                         </tr>
