@@ -17,6 +17,15 @@ admin_admin_client:
 admin_admin_prest:
     pattern:  /Admin/prestataire
     defaults: { _controller: AdminAdminBundle:Default:prestataire }
+    
+admin_admin_prest_a_Valider:
+    pattern:  /Admin/prest_a_Valider
+    defaults: { _controller: AdminAdminBundle:Default:prest_a_Valider }
+
+admin_admin_ValiderP:
+    pattern:  /Admin/ValiderP/{id}
+    defaults: { _controller: AdminAdminBundle:Default:ValiderP }
+    
 
 admin_admin_deal:
     pattern:  /Admin/deal

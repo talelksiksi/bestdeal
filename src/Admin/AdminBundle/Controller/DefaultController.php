@@ -31,6 +31,13 @@ class DefaultController extends Controller
         return $this->render("AdminAdminBundle:Default:prestataire.html.twig",array("prests"=>$prest));
     }
     
+     public function prest_a_ValiderAction()
+    {
+       $em= $this->getDoctrine()->getManager();
+        $prest=$em->getRepository("UserBundle:User")->findBy(array('statut' => '0'));
+        return $this->render("AdminAdminBundle:Default:prest_a_Valider.html.twig",array("prests"=>$prest));
+    }
+    
     
     public function dealAction()
     {
@@ -85,5 +92,19 @@ class DefaultController extends Controller
            $em->flush();
            
          return new RedirectResponse($this->get('router')->generate('admin_admin_deal_a_Valider'));
+    }
+    
+    public function ValiderPAction($id){
+           $em= $this->getDoctrine()->getManager();
+           $prest=$em->getRepository("UserBundle:User")->findOneBy(array('iduser' => $id));
+           if (!$prest) {
+        throw $this->createNotFoundException(
+            'Aucun prestataire trouvé pour cet id : '.$id
+        );
+    }
+           $prest->setStatut('1');
+           $em->flush();
+           
+         return new RedirectResponse($this->get('router')->generate('admin_admin_prest_a_Valider'));
     }
 }
