@@ -151,9 +151,58 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::clientAction',  '_route' => 'admin_admin_client',);
             }
 
-            // admin_admin_prest
-            if ($pathinfo === '/Admin/deal') {
-                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::dealAction',  '_route' => 'admin_admin_prest',);
+            if (0 === strpos($pathinfo, '/Admin/prest')) {
+                // admin_admin_prest
+                if ($pathinfo === '/Admin/prestataire') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::prestataireAction',  '_route' => 'admin_admin_prest',);
+                }
+
+                // admin_admin_prest_a_Valider
+                if ($pathinfo === '/Admin/prest_a_Valider') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::prest_a_ValiderAction',  '_route' => 'admin_admin_prest_a_Valider',);
+                }
+
+            }
+
+            // admin_admin_ValiderP
+            if (0 === strpos($pathinfo, '/Admin/ValiderP') && preg_match('#^/Admin/ValiderP/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_ValiderP')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::ValiderPAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/Admin/deal')) {
+                // admin_admin_deal
+                if ($pathinfo === '/Admin/deal') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::dealAction',  '_route' => 'admin_admin_deal',);
+                }
+
+                // admin_admin_deal_a_Valider
+                if ($pathinfo === '/Admin/deal_a_Valider') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::deal_a_ValiderAction',  '_route' => 'admin_admin_deal_a_Valider',);
+                }
+
+            }
+
+            // admin_admin_ValiderD
+            if (0 === strpos($pathinfo, '/Admin/ValiderD') && preg_match('#^/Admin/ValiderD/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_ValiderD')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::ValiderDAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/Admin/supprimer')) {
+                // client_supprimer
+                if (0 === strpos($pathinfo, '/Admin/supprimerC') && preg_match('#^/Admin/supprimerC/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'client_supprimer')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::supprimerCAction',));
+                }
+
+                // prest_supprimer
+                if (0 === strpos($pathinfo, '/Admin/supprimerP') && preg_match('#^/Admin/supprimerP/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'prest_supprimer')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::supprimerPAction',));
+                }
+
+                // deal_supprimer
+                if (0 === strpos($pathinfo, '/Admin/supprimerD') && preg_match('#^/Admin/supprimerD/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_supprimer')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::supprimerDAction',));
+                }
+
             }
 
         }
