@@ -1,6 +1,7 @@
 <?php
 
 namespace Admin\AdminBundle\Controller;
+use \Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MyApp\UserBundle\Entity\User;
 use MyApp\UserBundle\Entity\Deal;
@@ -18,7 +19,7 @@ class DefaultController extends Controller
     }
     
      public function clientAction()
-    {
+    {   
        $em= $this->getDoctrine()->getManager();
         $client=$em->getRepository("UserBundle:User")->findBy(array('role' => 'client'));
         return $this->render("AdminAdminBundle:Default:client.html.twig",array("clients"=>$client));
@@ -106,5 +107,13 @@ class DefaultController extends Controller
            $em->flush();
            
          return new RedirectResponse($this->get('router')->generate('admin_admin_prest_a_Valider'));
+    }
+    
+    public function rechercherAction(Request $request){
+        $searchQuery = $this->get('request')->request->get('recherche');
+        $em= $this->getDoctrine()->getManager();
+        $recherche=$em->getRepository("UserBundle:User")->findBy(array('nom' => $searchQuery));
+        return $this->render("AdminAdminBundle:Default:recherche.html.twig",array("recherches"=>$recherche));
+        
     }
 }

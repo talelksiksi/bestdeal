@@ -205,6 +205,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // deal_rechercher
+            if ($pathinfo === '/Admin/rechercher') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherAction',  '_route' => 'deal_rechercher',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

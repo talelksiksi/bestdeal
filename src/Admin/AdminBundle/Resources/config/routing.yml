@@ -51,3 +51,6 @@ prest_supprimer:
 deal_supprimer:
     pattern:  /Admin/supprimerD/{id}
     defaults: { _controller: AdminAdminBundle:Default:supprimerD }    
+deal_rechercher:
+    pattern:  /Admin/rechercher
+    defaults: { _controller: AdminAdminBundle:Default:rechercher }    
