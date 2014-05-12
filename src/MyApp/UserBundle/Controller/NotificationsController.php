@@ -17,13 +17,13 @@ use Symfony\Component\HttpFoundation\Response;
 class NotificationsController extends controller
 {
     public function listAction()
-    {
+    {   $user = $this->container->get('security.context')->getToken()->getUser();
         $Etudiant = $this->getDoctrine()
                      ->getManager()
                      ->getRepository('UserBundle:Notification')->findAll();
 
   
   return $this->render('UserBundle:BestDeal:notification.html.twig', array(
-    'Notifications' => $Etudiant));
+    'Notifications' => $Etudiant,'user' => $user ));
     }
 }

@@ -17,3 +17,10 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: MyApp_user_registration }
+            
+    ccdn_user_security.component.authentication.handler.login_Success_handler:
+        
+        class:  MyApp\UserBundle\Componoent\LoginSuccessHandler
+        arguments:  [@router, @security.context]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

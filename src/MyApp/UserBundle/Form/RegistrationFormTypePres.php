@@ -14,12 +14,12 @@ class RegistrationFormTypePres extends BaseType
           $builder->add('nom');
           $builder->add('prenom');
           $builder->add('adresse');
-          $builder->add('sexe');
+          
           $builder->add('datedenaissance');
           $builder->add('telephone');
           $builder->add('descriptif');
           $builder->add('societe');
-      
+
     }
 
     public function getName()
