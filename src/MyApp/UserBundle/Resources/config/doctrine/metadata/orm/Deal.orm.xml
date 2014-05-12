@@ -4,7 +4,7 @@
     <indexes>
       <index name="FK_Association5" columns="IdUser"/>
     </indexes>
-    <id name="id" type="integer" column="IdDeal">
+    <id name="iddeal" type="integer" column="IdDeal">
       <generator strategy="IDENTITY"/>
     </id>
     <field name="libelle" type="string" column="Libelle" length="254" nullable="true"/>

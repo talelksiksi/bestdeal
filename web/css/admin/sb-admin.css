@@ -20,6 +20,39 @@
  #wrapper {
     width: 100%;
 }
+#3dbar {
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+}
+#chartdiv {
+    
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+}
+#Donut {
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+}
+#Donutuser {
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+}
+#Piechart {
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+        
+}
+#Piechartuser {
+	width		: 500px;
+	height		: 300px;
+	font-size	: 11px;
+        
+}
 
 #pagewrapper {
     padding: 0 15px;

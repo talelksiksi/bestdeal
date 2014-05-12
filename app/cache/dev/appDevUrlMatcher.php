@@ -141,9 +141,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin_admin_homepage',);
             }
 
-            // admin_admin_morris
-            if ($pathinfo === '/Admin/morris') {
-                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::morrisAction',  '_route' => 'admin_admin_morris',);
+            // admin_admin_stat
+            if ($pathinfo === '/Admin/stat') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::statAction',  '_route' => 'admin_admin_stat',);
+            }
+
+            // admin_admin_notif
+            if ($pathinfo === '/Admin/index') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin_admin_notif',);
             }
 
             // admin_admin_client
@@ -205,9 +210,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // deal_rechercher
-            if ($pathinfo === '/Admin/rechercher') {
-                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherAction',  '_route' => 'deal_rechercher',);
+            if (0 === strpos($pathinfo, '/Admin/rechercher')) {
+                // user_rechercher
+                if ($pathinfo === '/Admin/rechercher') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherAction',  '_route' => 'user_rechercher',);
+                }
+
+                // user_rechercherP
+                if ($pathinfo === '/Admin/rechercherP') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherPAction',  '_route' => 'user_rechercherP',);
+                }
+
+                // deal_rechercher
+                if ($pathinfo === '/Admin/rechercherD') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherDAction',  '_route' => 'deal_rechercher',);
+                }
+
+                // user_rechercher_prenom
+                if ($pathinfo === '/Admin/rechercher_prenom') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercher_prenomAction',  '_route' => 'user_rechercher_prenom',);
+                }
+
+                // deal_rechercher_cat
+                if ($pathinfo === '/Admin/rechercherD_cat') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::rechercherD_catAction',  '_route' => 'deal_rechercher_cat',);
+                }
+
             }
 
         }
@@ -404,32 +432,60 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'user_connexion',);
         }
 
-        // blog_accueil
-        if (preg_match('#^/(?P<page>\\d*)?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_accueil')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\BlogController::indexAction',  'page' => 1,));
+        // notification
+        if ($pathinfo === '/notification') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\NotificationsController::listAction',  '_route' => 'notification',);
         }
 
-        if (0 === strpos($pathinfo, '/a')) {
-            // blog_voir
-            if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_voir')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\BlogController::voirAction',));
+        if (0 === strpos($pathinfo, '/registerPres')) {
+            // fos_user_registration_registerPres
+            if (rtrim($pathinfo, '/') === '/registerPres') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'fos_user_registration_registerPres');
+                }
+
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationPresController::registerAction',  '_route' => 'fos_user_registration_registerPres',);
             }
 
-            // blog_ajouter
-            if ($pathinfo === '/ajouter') {
-                return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\BlogController::ajouterAction',  '_route' => 'blog_ajouter',);
+            if (0 === strpos($pathinfo, '/registerPres/c')) {
+                // fos_user_registrationPres_check_email
+                if ($pathinfo === '/registerPres/check-email') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fos_user_registrationPres_check_email;
+                    }
+
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationPresController::checkEmailAction',  '_route' => 'fos_user_registrationPres_check_email',);
+                }
+                not_fos_user_registrationPres_check_email:
+
+                if (0 === strpos($pathinfo, '/registerPres/confirm')) {
+                    // fos_user_registrationPres_confirm
+                    if (preg_match('#^/registerPres/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_fos_user_registrationPres_confirm;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registrationPres_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationPresController::confirmAction',));
+                    }
+                    not_fos_user_registrationPres_confirm:
+
+                    // fos_user_registrationPres_confirmed
+                    if ($pathinfo === '/registerPres/confirmed') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_fos_user_registrationPres_confirmed;
+                        }
+
+                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationPresController::confirmedAction',  '_route' => 'fos_user_registrationPres_confirmed',);
+                    }
+                    not_fos_user_registrationPres_confirmed:
+
+                }
+
             }
 
-        }
-
-        // blog_modifier
-        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_modifier')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\BlogController::modifierAction',));
-        }
-
-        // blog_supprimer
-        if (0 === strpos($pathinfo, '/supprimer') && preg_match('#^/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_supprimer')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\BlogController::supprimerAction',));
         }
 
         // _welcome

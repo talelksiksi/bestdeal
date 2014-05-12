@@ -16,9 +16,9 @@
         </div>
 
         {% for type, messages in app.session.flashbag.all() %}
-            {% for message in messages %}
+            {% for key, message in messages %}
                 <div class="flash-{{ type }}">
-                    {{ message }}
+                    {{ message|trans({}, 'FOSUserBundle') }}
                 </div>
             {% endfor %}
         {% endfor %}

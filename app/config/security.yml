@@ -5,8 +5,9 @@ security:
 
 
     role_hierarchy:
+        ROLE_PRES:        ROLE_USER
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH,ROLE_PRES]
 
     providers:
         in_memory:
@@ -14,7 +15,9 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-
+    providers:
+        main:
+            id: fos_user.user_provider.username
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
@@ -35,6 +38,19 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
-
+        main:
+            pattern:        ^/
+            anonymous:      true
+            provider:       main
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+            logout:
+                path:       fos_user_security_logout
+                target:     /login
+            remember_me:
+                key:        %secret% 
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Admin/, role: ROLE_SUPER_ADMIN }
+        - { path: ^/notification/, role: ROLE_PRES }

@@ -59,7 +59,6 @@ class RegistrationController extends ContainerAware
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-
                 $userManager->updateUser($user);
 
                 if (null === $response = $event->getResponse()) {
@@ -73,7 +72,7 @@ class RegistrationController extends ContainerAware
             }
         }
 
-        return $this->container->get('templating')->renderResponse('FOSUserBundle:Registration:register.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('UserBundle:Registration:register.html.'.$this->getEngine(), array(
             'form' => $form->createView(),
         ));
     }

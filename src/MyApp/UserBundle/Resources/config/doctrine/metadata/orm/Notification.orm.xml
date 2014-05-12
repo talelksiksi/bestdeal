@@ -6,12 +6,17 @@
       <index name="FK_Association8" columns="IdToUser"/>
       <index name="FK_Association9" columns="IdDeal"/>
     </indexes>
-    <id name="id" type="integer" column="IdNotification">
+    <id name="idnotification" type="integer" column="IdNotification">
       <generator strategy="IDENTITY"/>
     </id>
     <field name="datenotification" type="string" column="DateNotification" length="100" nullable="true"/>
     <field name="typenotification" type="string" column="TypeNotification" length="254" nullable="true"/>
     <field name="message" type="string" column="Message" length="254" nullable="true"/>
+    <many-to-one field="iddeal" target-entity="Deal">
+      <join-columns>
+        <join-column name="IdDeal" referenced-column-name="IdDeal"/>
+      </join-columns>
+    </many-to-one>
     <many-to-one field="idtouser" target-entity="User">
       <join-columns>
         <join-column name="IdToUser" referenced-column-name="IdUser"/>
@@ -20,11 +25,6 @@
     <many-to-one field="idfromuser" target-entity="User">
       <join-columns>
         <join-column name="IdFromUser" referenced-column-name="IdUser"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="iddeal" target-entity="Deal">
-      <join-columns>
-        <join-column name="IdDeal" referenced-column-name="IdDeal"/>
       </join-columns>
     </many-to-one>
   </entity>

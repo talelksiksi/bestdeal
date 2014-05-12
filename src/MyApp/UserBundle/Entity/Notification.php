@@ -31,7 +31,7 @@ class Notification
     /**
      * @var string
      *
-     * @ORM\Column(name="TypeNotification", type="string", length=254, nullable=true)
+        * @ORM\Column(name="TypeNotification", type="string", length=254, nullable=true)
      */
     private $typenotification;
 

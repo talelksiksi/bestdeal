@@ -224,12 +224,14 @@ abstract class UserManager implements UserManagerInterface, UserProviderInterfac
     {
         return $this->usernameCanonicalizer->canonicalize($username);
     }
+     
 
     protected function getEncoder(UserInterface $user)
     {
         return $this->encoderFactory->getEncoder($user);
     }
 
+    
     /**
      * {@inheritDoc}
      * @deprecated Use FOS\UserBundle\Security\UserProvider instead

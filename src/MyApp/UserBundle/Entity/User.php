@@ -1,16 +1,16 @@
 <?php
 
 namespace MyApp\UserBundle\Entity;
-
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
-class User
+class User extends BaseUser
 {
     /**
      * @var integer
@@ -19,40 +19,22 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $iduser;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Login", type="string", length=254, nullable=true)
-     */
-    private $login;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="MotDePasse", type="string", length=254, nullable=true)
-     */
-    private $motdepasse;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Role", type="string", length=254, nullable=true)
-     */
-    private $role;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="Nom", type="string", length=254, nullable=true)
+
+
      */
     private $nom;
 
-    /**
+     /**
      * @var string
      *
      * @ORM\Column(name="Prenom", type="string", length=254, nullable=true)
+ 
      */
     private $prenom;
 
@@ -60,6 +42,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="Sexe", type="string", length=254, nullable=true)
+     *
      */
     private $sexe;
 
@@ -74,6 +57,7 @@ class User
      * @var integer
      *
      * @ORM\Column(name="Telephone", type="integer", nullable=true)
+     * 
      */
     private $telephone;
 
@@ -81,6 +65,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="Societe", type="string", length=254, nullable=true)
+     * 
      */
     private $societe;
 
@@ -88,6 +73,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="Adresse", type="string", length=254, nullable=true)
+     * 
      */
     private $adresse;
 
@@ -95,6 +81,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="Descriptif", type="string", length=254, nullable=true)
+     *
      */
     private $descriptif;
 
@@ -102,6 +89,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="Logo", type="string", length=254, nullable=true)
+     * 
      */
     private $logo;
 
@@ -109,6 +97,7 @@ class User
      * @var integer
      *
      * @ORM\Column(name="Statut", type="integer", nullable=true)
+     * 
      */
     private $statut;
 
@@ -422,4 +411,5 @@ class User
     {
         return $this->statut;
     }
+    
 }
