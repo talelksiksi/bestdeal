@@ -135,6 +135,44 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // prestataire_de_servicesprestataire_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'prestataire_de_servicesprestataire_homepage')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // prestataire_de_servicesprestataire_affichage
+        if ($pathinfo === '/affichage') {
+            return array (  '_controller' => 'PrestataireDeServicesprestataireBundle:PS:affichage',  '_route' => 'prestataire_de_servicesprestataire_affichage',);
+        }
+
+        // prestataire_de_servicesprestataire_test
+        if ($pathinfo === '/test') {
+            return array (  '_controller' => 'PrestataireDeServicesprestataireBundle:PS:PSaffiche',  '_route' => 'prestataire_de_servicesprestataire_test',);
+        }
+
+        // deal_mesDeal
+        if (0 === strpos($pathinfo, '/mesDeal') && preg_match('#^/mesDeal/(?P<iduser>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_mesDeal')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::mesDealAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/rel')) {
+            // rel
+            if ($pathinfo === '/rel') {
+                return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DefaultController::relAction',  '_route' => 'rel',);
+            }
+
+            // rel2
+            if ($pathinfo === '/rel2') {
+                return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DefaultController::rel2Action',  '_route' => 'rel2',);
+            }
+
+        }
+
+        // profil
+        if ($pathinfo === '/profil') {
+            return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DefaultController::ProfilAction',  '_route' => 'profil',);
+        }
+
         if (0 === strpos($pathinfo, '/Admin')) {
             // admin_admin_homepage
             if ($pathinfo === '/Admin/index') {
@@ -485,6 +523,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
             }
+
+        }
+
+        if (0 === strpos($pathinfo, '/deal')) {
+            // deal
+            if (rtrim($pathinfo, '/') === '/deal') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'deal');
+                }
+
+                return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::indexAction',  '_route' => 'deal',);
+            }
+
+            // deal_show
+            if (preg_match('#^/deal/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_show')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::showAction',));
+            }
+
+            // deal_new
+            if ($pathinfo === '/deal/new') {
+                return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::newAction',  '_route' => 'deal_new',);
+            }
+
+            // deal_create
+            if ($pathinfo === '/deal/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_deal_create;
+                }
+
+                return array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::createAction',  '_route' => 'deal_create',);
+            }
+            not_deal_create:
+
+            // deal_edit
+            if (preg_match('#^/deal/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_edit')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::editAction',));
+            }
+
+            // deal_update
+            if (preg_match('#^/deal/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_deal_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_update')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::updateAction',));
+            }
+            not_deal_update:
+
+            // deal_delete
+            if (preg_match('#^/deal/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_deal_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_delete')), array (  '_controller' => 'PrestataireDeServices\\prestataireBundle\\Controller\\DealController::deleteAction',));
+            }
+            not_deal_delete:
 
         }
 

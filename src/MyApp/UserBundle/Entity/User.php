@@ -411,5 +411,8 @@ class User extends BaseUser
     {
         return $this->statut;
     }
+    public function __toString() {
+        parent::__toString();
+    }
     
 }

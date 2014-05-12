@@ -1,3 +1,7 @@
+prestataire_de_servicesprestataire:
+    resource: "@PrestataireDeServicesprestataireBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin_admin:
     resource: "@AdminAdminBundle/Resources/config/routing.yml"
     prefix:   /
@@ -39,3 +43,7 @@ AbdouUserBundle:
 fos_user_Pres:
     resource: "@UserBundle/Resources/config/routing/registrationPres.xml"
     prefix: /registerPres
+  
+PrestataireDeServicesprestataireBundle_deal:
+        resource: "@PrestataireDeServicesprestataireBundle/Resources/config/routing/deal.yml"
+        prefix:   /deal

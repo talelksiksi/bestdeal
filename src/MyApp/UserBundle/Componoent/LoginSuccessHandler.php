@@ -30,7 +30,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
         }
         elseif ($this->security->isGranted('ROLE_PRES'))
         {
-            $response = new RedirectResponse($this->router->generate('notification'));
+            $response = new RedirectResponse($this->router->generate('deal'));
         }
         elseif ($this->security->isGranted('ROLE_USER'))
        {
