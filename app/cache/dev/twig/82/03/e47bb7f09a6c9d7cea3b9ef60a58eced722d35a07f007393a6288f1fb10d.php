@@ -28,50 +28,205 @@ class __TwigTemplate_8203e47bb7f09a6c9d7cea3b9ef60a58eced722d35a07f007393a6288f1
     public function block_container($context, array $blocks = array())
     {
         // line 3
-        echo "    <div class=\"container\">
+        echo "
+<div class=\"container\">
 
-         <div class=\"row\"  >
+    <div class=\"row\"  >
+        <form action=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("user_recherche");
+        echo "\" method=\"POST\" >
             <div class=\"box\" align=\"center\">
-            <div class=\"col-lg-12\">
-           <hr>
-            <h2 class=\"intro-text text-center\"> Recherche Avancée</h2>
-            <hr>
-              <h3 class=\"intro-text\"> Recherche par Nom:</h3> <input type=\"text\" > <br>
-            <h3 class=\"intro-text\">Recherche par Type:</h3><br> Technologie <input type=\"radio\"  name=\"type\"> Vêtements <input type=\"radio\"  name=\"type\"> Domestique <input type=\"radio\"  name=\"type\"><br>
-            <h3 class=\"intro-text\"> Recherche par Catégorie:</h3><br> Produit <input type=\"radio\"  name=\"cat\"> Service <input type=\"radio\"  name=\"cat\"><br> <h3 align=\"center\"> <center><input type=\"button\" class=\"col-sm-2\" value=\"Rechercher\"></center></h3>
-            
-            </div>
-            </div>
-            <div class=\"box\" >
                 <div class=\"col-lg-12\">
                     <hr>
-                    <h2 class=\"intro-text text-center\">Deal Quelconque</h2>
+                    <h2 class=\"intro-text text-center\"> Recherche Avancée</h2>
                     <hr>
-                    <img class=\"img-responsive img-border img-left\" src=\"img/deal1.jpg\" alt=\"\">
-                    <hr class=\"visible-xs\">
-                    <p>Description Deal</p>
+                    <h3 class=\"intro-text\"> Recherche par Nom:</h3> <input type=\"text\" name=\"nom\" > <br>
+                    <h3 class=\"intro-text\">Recherche par Type:</h3><br> Produit <input type=\"radio\"  name=\"type\" value=\"Produit\"> Service <input type=\"radio\"  name=\"type\" value=\"Service\">
+                    <h3 class=\"intro-text\"> Recherche par Catégorie:</h3><br> Technologie <input type=\"radio\"  name=\"cat\" value=\"Technologie\"> Vêtements <input type=\"radio\"  name=\"cat\"> Domestique <input type=\"radio\"  name=\"cat\"> Sanitaire <input type=\"radio\"  name=\"cat\" value=\"Sanitaire\"><br><br> 
+                    <h3 align=\"center\"> <center><input type=\"submit\" class=\"col-sm-2\" value=\"Rechercher\"></center></h3>
+
                 </div>
             </div>
-             <div class=\"box\">
-                <div class=\"col-lg-12\">
-                    <hr>
-                    <h2 class=\"intro-text text-center\">Deal Quelconque</h2>
-                    <hr>
-                    <img class=\"img-responsive img-border img-left\" src=\"img/deal2.jpg\" alt=\"\">
-                    <hr class=\"visible-xs\">
-                    <p>Description Deal</p>
+        </form>   
+
+                 <div class=\"box\">
+                ";
+        // line 23
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["deals"]) ? $context["deals"] : $this->getContext($context, "deals")));
+        foreach ($context['_seq'] as $context["_key"] => $context["deal"]) {
+            // line 24
+            echo "
+                <div class=\"col-sm-4 text-center\">
+                    <div class=\"test\">
+                        <div id=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal"), "html", null, true);
+            echo "\">
+                            <div class=\"libelle\">  <span class=\"shorttitle\">";
+            // line 28
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Libelle"), "html", null, true);
+            echo "</span></div>
+                            <img src='";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Image"), "html", null, true);
+            echo "' width=\"100%\" height=\"180px\">
+                            <br><span class=\"discount_text\">A partir de</span> <span class=\"item_price\">";
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixPromotionnel"), "html", null, true);
+            echo " dt</span> <span class=\"original_price\"> ";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixInitial"), "html", null, true);
+            echo " dt</span><br>
+
+                            <div class=\"dealex\"><span class=\"dealexp\">  Ce deal est valable jusqu'au<br> </span> <span class=\"dealdateexp\">";
+            // line 32
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "DateFin"), "html", null, true);
+            echo "</span></div>
+                            
+                            <div class=\"dealr\"><span class=\"remise\"> - ";
+            // line 34
+            echo twig_escape_filter($this->env, twig_round((100 / ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixInitial") / $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixPromotionnel"))), 1, "floor"), "html", null, true);
+            echo " %</span></div>
+                            
+                        </div>
+                    </div>   
+
+                    <div id=\"";
+            // line 39
+            echo twig_escape_filter($this->env, ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal") + 200), "html", null, true);
+            echo "\"  class=\"divkbira\" style=\"display:none;\">                             
+                        <h4 class=\"dealtitr\">";
+            // line 40
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Libelle"), "html", null, true);
+            echo "</h4>
+                        <div class=\"imgdet\"><img src='";
+            // line 41
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Image"), "html", null, true);
+            echo "' width=\"600px\" height=\"300px\"></div>
+                        <div class=\"dealdet\"><span class=\"discount_text\">A partir de</span> <span class=\"item_price\">";
+            // line 42
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixPromotionnel"), "html", null, true);
+            echo " dt</span> <span class=\"original_price\"> ";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixInitial"), "html", null, true);
+            echo " dt</span><br>
+                        La date du dépôt du deal est le ";
+            // line 43
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "DateDebut"), "html", null, true);
+            echo " <br>
+                        Profitez VITE, ce deal est valable jusqu'au <span class=\"dealdateexp\">";
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "DateFin"), "html", null, true);
+            echo "</span><br>
+                        <b>Type :</b> ";
+            // line 45
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "TypeDeal"), "html", null, true);
+            echo "<br>
+                        <b> Catégorie:</b> ";
+            // line 46
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Categorie"), "html", null, true);
+            echo "<br>
+                        Vous économisez ";
+            // line 47
+            echo twig_escape_filter($this->env, ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixInitial") - $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixPromotionnel")), "html", null, true);
+            echo " dt<br>
+                        <span class=\"remise\"> - ";
+            // line 48
+            echo twig_escape_filter($this->env, twig_round((100 / ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixInitial") / $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "PrixPromotionnel"))), 1, "floor"), "html", null, true);
+            echo " %</span><br>
+                        </div>
+                            <div class=\"detdeal\"><b> Détail de l'offre:</b><br>";
+            // line 50
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "Descriptif"), "html", null, true);
+            echo "
+                    
+                                </br> <div class=\"dealre\"><a href=\"";
+            // line 52
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("deal_areserver", array("iddeal" => $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal"), "iduser" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "id"))), "html", null, true);
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/reservez.jpg"), "html", null, true);
+            echo "\"></a></div> 
+                          
+                        <div class=\"evaluation\">
+                            <form action=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("deal_evaluer", array("iddeal" => $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal"), "iduser" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "id"))), "html", null, true);
+            echo "\" method=\"POST\" >
+                                 
+                                <fieldset class=\"rating\">
+                                    <legend>Notez le deal:</legend>
+                                    <input type=\"radio\" id=\"star5\" name=\"rating\" value=\"5\" /><label for=\"star5\" title=\"Rocks!\">5 stars</label>
+                                    <input type=\"radio\" id=\"star4\" name=\"rating\" value=\"4\" /><label for=\"star4\" title=\"Pretty good\">4 stars</label>
+                                    <input type=\"radio\" id=\"star3\" name=\"rating\" value=\"3\" /><label for=\"star3\" title=\"Meh\">3 stars</label>
+                                    <input type=\"radio\" id=\"star2\" name=\"rating\" value=\"2\" /><label for=\"star2\" title=\"Kinda bad\">2 stars</label>
+                                    <input type=\"radio\" id=\"star1\" name=\"rating\" value=\"1\" /><label for=\"star1\" title=\"Sucks big time\">1 star</label>
+                                </fieldset>
+
+                                <br>
+                                <textarea name=\"commentaire\" rows=\"4\" cols=\"50\">
+                                    Commentez le deal
+                                </textarea><br>
+                                <center><input id=\"eval\" type=\"submit\" class=\"col-sm-2\" value=\"Evaluer\"></center>
+                                <div id=\"zone\"></div>
+                            </form>
+                        </div>
+                              </div>
+                ";
+            // line 88
+            echo "                    </div>
+
                 </div>
-            </div>
-             <div class=\"box\">
-                <div class=\"col-lg-12\">
-                    <hr>
-                    <h2 class=\"intro-text text-center\">Deal Quelconque</h2>
-                    <hr>
-                    <img class=\"img-responsive img-border img-left\" src=\"img/deal3.jpg\" alt=\"\">
-                    <hr class=\"visible-xs\">
-                    <p>Description Deal</p>
+
+
+
+                <script>
+                    // Lors du clique sur le boutton le div #d1 sera AFFICHER
+
+
+                    \$('#";
+            // line 98
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal"), "html", null, true);
+            echo "').click(function() {
+
+                        \$('.test').addClass(\"transparence\");
+                        \$('#";
+            // line 101
+            echo twig_escape_filter($this->env, ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal") + 200), "html", null, true);
+            echo "').fadeIn(\"slow\");
+                    });
+                    \$('#";
+            // line 103
+            echo twig_escape_filter($this->env, ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal") + 200), "html", null, true);
+            echo "').dblclick(function() {
+
+                        \$('#";
+            // line 105
+            echo twig_escape_filter($this->env, ($this->getAttribute((isset($context["deal"]) ? $context["deal"] : $this->getContext($context, "deal")), "IdDeal") + 200), "html", null, true);
+            echo "').hide();
+                        \$('.test').removeClass(\"transparence\");
+                    });
+
+
+                    \$('#eval').click(function() {
+
+                        \$('.evaluation').hide(\"slow\");
+                    });
+
+
+
+
+
+
+                    </script>         
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['deal'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 122
+        echo "
                 </div>
-            </div>
+
         </div>
 
     </div>
@@ -90,6 +245,6 @@ class __TwigTemplate_8203e47bb7f09a6c9d7cea3b9ef60a58eced722d35a07f007393a6288f1
 
     public function getDebugInfo()
     {
-        return array (  90 => 40,  127 => 56,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 151,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 122,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 111,  362 => 110,  360 => 109,  355 => 106,  341 => 105,  337 => 103,  322 => 101,  314 => 99,  312 => 98,  309 => 97,  305 => 95,  298 => 91,  294 => 90,  285 => 89,  283 => 88,  278 => 86,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 77,  229 => 73,  220 => 70,  214 => 69,  177 => 65,  169 => 60,  140 => 55,  132 => 51,  128 => 49,  107 => 36,  61 => 25,  273 => 96,  269 => 94,  254 => 92,  243 => 88,  240 => 86,  238 => 85,  235 => 74,  230 => 82,  227 => 81,  224 => 71,  221 => 77,  219 => 76,  217 => 75,  208 => 68,  204 => 72,  179 => 69,  159 => 61,  143 => 56,  135 => 53,  119 => 42,  102 => 32,  71 => 19,  67 => 26,  63 => 15,  59 => 14,  38 => 6,  94 => 28,  89 => 20,  85 => 56,  75 => 17,  68 => 14,  56 => 21,  87 => 25,  21 => 1,  26 => 3,  93 => 28,  88 => 57,  78 => 21,  46 => 7,  27 => 4,  44 => 12,  31 => 3,  28 => 2,  201 => 92,  196 => 90,  183 => 82,  171 => 61,  166 => 71,  163 => 62,  158 => 67,  156 => 66,  151 => 63,  142 => 59,  138 => 54,  136 => 56,  121 => 55,  117 => 44,  105 => 69,  91 => 27,  62 => 24,  49 => 16,  24 => 4,  25 => 3,  19 => 1,  79 => 18,  72 => 28,  69 => 15,  47 => 9,  40 => 8,  37 => 10,  22 => 2,  246 => 90,  157 => 56,  145 => 46,  139 => 45,  131 => 52,  123 => 47,  120 => 40,  115 => 43,  111 => 37,  108 => 36,  101 => 68,  98 => 31,  96 => 57,  83 => 55,  74 => 14,  66 => 15,  55 => 22,  52 => 21,  50 => 10,  43 => 8,  41 => 16,  35 => 13,  32 => 4,  29 => 3,  209 => 82,  203 => 78,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 66,  176 => 64,  173 => 65,  168 => 72,  164 => 59,  162 => 57,  154 => 58,  149 => 51,  147 => 58,  144 => 49,  141 => 48,  133 => 55,  130 => 41,  125 => 44,  122 => 43,  116 => 41,  112 => 42,  109 => 34,  106 => 36,  103 => 32,  99 => 31,  95 => 28,  92 => 21,  86 => 28,  82 => 22,  80 => 19,  73 => 19,  64 => 14,  60 => 13,  57 => 11,  54 => 10,  51 => 14,  48 => 13,  45 => 15,  42 => 8,  39 => 9,  36 => 5,  33 => 4,  30 => 7,);
+        return array (  227 => 122,  204 => 105,  199 => 103,  194 => 101,  188 => 98,  176 => 88,  153 => 55,  145 => 52,  140 => 50,  135 => 48,  131 => 47,  127 => 46,  123 => 45,  119 => 44,  115 => 43,  109 => 42,  105 => 41,  101 => 40,  97 => 39,  89 => 34,  84 => 32,  77 => 30,  73 => 29,  69 => 28,  65 => 27,  60 => 24,  56 => 23,  37 => 7,  31 => 3,  28 => 2,);
     }
 }

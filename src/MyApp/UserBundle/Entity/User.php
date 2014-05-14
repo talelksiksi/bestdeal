@@ -108,11 +108,7 @@ class User extends BaseUser
      *
      * @return integer 
      */
-    public function getIduser()
-    {
-        return $this->iduser;
-    }
-
+   
     /**
      * Set login
      *
@@ -415,4 +411,14 @@ class User extends BaseUser
         parent::__toString();
     }
     
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

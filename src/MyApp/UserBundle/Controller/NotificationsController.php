@@ -18,12 +18,14 @@ class NotificationsController extends controller
 {
     public function listAction()
     {   $user = $this->container->get('security.context')->getToken()->getUser();
-        $Etudiant = $this->getDoctrine()
-                     ->getManager()
-                     ->getRepository('UserBundle:Notification')->findAll();
+    $em=$this->getDoctrine()->getManager();
+    
+        $query = $em->createQuery('select n from UserBundle:Notification n where n.idtouser = ?1') ;
+        $query->setParameter(1,$user->getid());
+        $users=$query->getResult();
 
   
   return $this->render('UserBundle:BestDeal:notification.html.twig', array(
-    'Notifications' => $Etudiant,'user' => $user ));
+    'Notifications' => $users,'user' => $user ));
     }
 }

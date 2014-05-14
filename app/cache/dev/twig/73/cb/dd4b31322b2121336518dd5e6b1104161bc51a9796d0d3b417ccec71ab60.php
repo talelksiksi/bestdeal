@@ -84,8 +84,8 @@ class __TwigTemplate_73cbdd4b31322b2121336518dd5e6b1104161bc51a9796d0d3b417ccec7
         // line 52
         echo $this->env->getExtension('routing')->getPath("deal_new");
         echo "\" class=\"list-group-item\">Ajouter Deal</a>
-                    <a href=\"\" class=\"list-group-item\">Profil</a>
-                    <a href=\"\" class=\"list-group-item\">Modifier Profil</a>
+                    <a href=\"http://localhost/P/bestdeal/web/app_dev.php/profile/\" class=\"list-group-item\">Profil</a>
+                    <a href=\"http://localhost/P/bestdeal/web/app_dev.php/profile/edit\" class=\"list-group-item\">Modifier Profil</a>
                     <a href=\"";
         // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("deal_mesDeal", array("iduser" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "id"))), "html", null, true);

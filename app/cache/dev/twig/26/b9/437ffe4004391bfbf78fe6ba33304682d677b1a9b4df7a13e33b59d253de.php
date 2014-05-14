@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle::layout.html.twig */
+/* UserBundle::layout.html.twig */
 class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d253de extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -40,12 +40,20 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
         // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bestdeal.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/jbir.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+        <script src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.11.0.min.js"), "html", null, true);
+        echo "\" language=\"Javascript\"></script>
     </head>
 
     <body>
-
-        <div class=\"brand\">Best Deal</div>
-
+        <div>
+        <div class=\"brand fl\">Best Deal</div>
+        <div class=\"fl1\">
         <nav class=\"navbar navbar-default\" role=\"navigation\">
             <div class=\"container\">
                 <div class=\"navbar-header\">
@@ -63,14 +71,16 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
                     <ul class=\"nav navbar-nav\">
                         <li><a href=\"home\">Home</a>
                         </li>
-                        <li><a href=\"recherche\">Recherche Deal</a>
+                        <li><a href=\"recherche\">Recherche</a>
+                        </li>                                           
+                        <li><a href=\"http://localhost/P/bestdeal/web/app_dev.php/login\">Connexion</a>
                         </li>
-                        <li><a href=\"connexion\">Mon Espace</a>
-                        </li>                    
-                        <li><a href=\"about\">About</a>
+                        
+                        
+                        <li><a href=\"http://localhost/P/bestdeal/web/app_dev.php/register/\">Inscription</a>
                         </li>
-                        <li><a href=\"contact\">Contact</a>
-                        </li>
+                        <li><a href=\"connexion\">logout</a>
+                        </li> 
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -79,17 +89,19 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
         </nav>
 
         ";
-        // line 55
+        // line 59
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 56
+        // line 60
         echo "        ";
         $this->displayBlock('container', $context, $blocks);
-        // line 57
-        echo "        <footer>
+        // line 61
+        echo "
+        <footer>
             <div class=\"footer\">
                 <div class=\"row\">
                     <div class=\"col-lg-12 text-center\">
-                        <p>Copyright &copy; Sticky Bit 3A9 2014</p>
+                        <p>Copyright &copy; Sticky Bit 3A9 2014                <a href=\"contact\">Contact</a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -97,11 +109,11 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
 
         <!-- JavaScript -->
         <script src=\"";
-        // line 68
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.10.2.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 69
+        // line 75
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
         <script>
@@ -111,19 +123,20 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
             })
         </script>
 
+                        </li>
     </body>
 
 </html>
 ";
     }
 
-    // line 55
+    // line 59
     public function block_fos_user_content($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 56
+    // line 60
     public function block_container($context, array $blocks = array())
     {
         echo " ";
@@ -131,7 +144,7 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
 
     public function getTemplateName()
     {
-        return "FOSUserBundle::layout.html.twig";
+        return "UserBundle::layout.html.twig";
     }
 
     public function isTraitable()
@@ -141,6 +154,6 @@ class __TwigTemplate_26b9437ffe4004391bfbf78fe6ba33304682d677b1a9b4df7a13e33b59d
 
     public function getDebugInfo()
     {
-        return array (  127 => 56,  121 => 55,  105 => 69,  101 => 68,  88 => 57,  85 => 56,  83 => 55,  41 => 16,  35 => 13,  21 => 1,  31 => 4,  28 => 3,);
+        return array (  140 => 60,  134 => 59,  117 => 75,  113 => 74,  98 => 61,  95 => 60,  93 => 59,  41 => 16,  35 => 13,  21 => 1,  85 => 38,  68 => 27,  62 => 24,  56 => 21,  49 => 18,  45 => 17,  31 => 3,  28 => 2,);
     }
 }

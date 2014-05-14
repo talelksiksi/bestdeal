@@ -470,6 +470,54 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'user_connexion',);
         }
 
+        // blog_accueil
+        if (preg_match('#^/(?P<page>\\d*)?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_accueil')), array (  '_controller' => 'UserBundle:Blog:index',  'page' => 1,));
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            // blog_voir
+            if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_voir')), array (  '_controller' => 'UserBundle:Blog:voir',));
+            }
+
+            // blog_ajouter
+            if ($pathinfo === '/ajouter') {
+                return array (  '_controller' => 'UserBundle:Blog:ajouter',  '_route' => 'blog_ajouter',);
+            }
+
+        }
+
+        // blog_modifier
+        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_modifier')), array (  '_controller' => 'UserBundle:Blog:modifier',));
+        }
+
+        // blog_supprimer
+        if (0 === strpos($pathinfo, '/supprimer') && preg_match('#^/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_supprimer')), array (  '_controller' => 'UserBundle:Blog:supprimer',));
+        }
+
+        // deal_areserver
+        if (0 === strpos($pathinfo, '/dareserver') && preg_match('#^/dareserver/(?P<iddeal>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_areserver')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::dareserverAction',));
+        }
+
+        // deal_reserver
+        if (0 === strpos($pathinfo, '/reserver') && preg_match('#^/reserver/(?P<iddeal>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_reserver')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::reserverAction',));
+        }
+
+        // deal_evaluer
+        if (0 === strpos($pathinfo, '/evaluer') && preg_match('#^/evaluer/(?P<iddeal>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'deal_evaluer')), array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::evaluerAction',));
+        }
+
+        // user_internaute
+        if ($pathinfo === '/internaute') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::internauteAction',  '_route' => 'user_internaute',);
+        }
+
         // notification
         if ($pathinfo === '/notification') {
             return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\NotificationsController::listAction',  '_route' => 'notification',);

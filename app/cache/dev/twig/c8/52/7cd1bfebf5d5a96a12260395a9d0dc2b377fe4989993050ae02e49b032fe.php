@@ -28,7 +28,7 @@ class __TwigTemplate_c8527cd1bfebf5d5a96a12260395a9d0dc2b377fe4989993050ae02e49b
     {
         // line 4
         echo "<link href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/inscri.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/jbir.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
 <div>
     <h1 style=\"color: #ffffff; font-style: italic;font-family: serif; text-align: center\"><strong>Ajouter votre Deal </strong></h1>

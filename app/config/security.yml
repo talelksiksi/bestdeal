@@ -55,4 +55,4 @@ security:
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/Admin/, role: ROLE_SUPER_ADMIN }
-        - { path: ^/notification/, role: ROLE_PRES }
+        - { path: ^/deal/, role: ROLE_PRES }

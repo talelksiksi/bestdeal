@@ -7,7 +7,7 @@ class __TwigTemplate_1001b9f4a088e6616e467486acb358466c9893f1621497ece48c57857bb
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("FOSUserBundle::layout.html.twig");
+        $this->parent = $this->env->loadTemplate("FOSUserBundle::layoutinternaute.html.twig");
 
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
@@ -16,7 +16,7 @@ class __TwigTemplate_1001b9f4a088e6616e467486acb358466c9893f1621497ece48c57857bb
 
     protected function doGetParent(array $context)
     {
-        return "FOSUserBundle::layout.html.twig";
+        return "FOSUserBundle::layoutinternaute.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -29,6 +29,9 @@ class __TwigTemplate_1001b9f4a088e6616e467486acb358466c9893f1621497ece48c57857bb
     {
         // line 4
         $this->env->loadTemplate("UserBundle:Registration:register_content.html.twig")->display($context);
+        // line 5
+        echo "<a href=\"http://localhost/P/bestdeal/web/app_dev.php/registerPres/\">s'insecrire en tant que prestataire de services</a>
+";
     }
 
     public function getTemplateName()
@@ -43,6 +46,6 @@ class __TwigTemplate_1001b9f4a088e6616e467486acb358466c9893f1621497ece48c57857bb
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  33 => 5,  31 => 4,  28 => 3,);
     }
 }

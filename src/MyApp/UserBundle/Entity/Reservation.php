@@ -19,7 +19,7 @@ class Reservation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idreservation;
 
     /**
      * @var string

@@ -1,12 +1,12 @@
 /* the overlayed element */
 
   #overlay {
-            //background-image:url("../img/overlay/white.png");
+            background-image:url("../img/overlay/petrol.png");
             background-repeat: no-repeat;
             color:#000000;
             height:1000px;
             display: none;
-            background-color: rosybrown;
+           // background-color: #333333;
             
  }
 div.contentWrap {

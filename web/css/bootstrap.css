@@ -1245,7 +1245,10 @@ pre code {
     float: left;
   }
   .col-lg-12 {
-    width: 100%;
+    /*width: 100%; */
+    width: 75%;
+    margin : 0 130px;
+
   }
   .col-lg-11 {
     width: 91.66666666666666%;
@@ -5436,7 +5439,7 @@ button.close {
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 400px;
   line-height: 1;
 }
 .carousel-inner > .active,

@@ -48,7 +48,7 @@ class DefaultController extends Controller
         
         $query3 = $this->getDoctrine()->getEntityManager()
                 ->createQuery('SELECT s FROM UserBundle:Deal s WHERE s.categorie=:u ')
-                ->setParameter('u', 'electromenager');
+                ->setParameter('u', 'hygiène');
         $electromenager = $query3->getResult();
         
         $query4 = $this->getDoctrine()->getEntityManager()
@@ -58,12 +58,12 @@ class DefaultController extends Controller
         
         $query5 = $this->getDoctrine()->getEntityManager()
                 ->createQuery('SELECT s FROM UserBundle:Deal s WHERE s.categorie=:p ')
-                ->setParameter('p', 'massage');
+                ->setParameter('p', 'sanitaire');
         $massage = $query5->getResult();
         
         $query6 = $this->getDoctrine()->getEntityManager()
                 ->createQuery('SELECT s FROM UserBundle:Deal s WHERE s.categorie=:k ')
-                ->setParameter('k', 'domestique');
+                ->setParameter('k', 'hotel');
         $domestique = $query6->getResult();
         
         $query7 = $this->getDoctrine()->getEntityManager()

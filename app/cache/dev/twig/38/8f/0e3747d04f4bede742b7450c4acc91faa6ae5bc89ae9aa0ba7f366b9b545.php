@@ -76,7 +76,7 @@ class __TwigTemplate_388f0e3747d04f4bede742b7450c4acc91faa6ae5bc89ae9aa0ba7f366b
                         </li>
                         <li><a href=\"connexion\">Mon Espace</a>
                         </li>                    
-                        <li><a href=\"about\">About</a>
+                         <li><a href=\"http://localhost/P/bestdeal/web/app_dev.php/login\">Connexion</a>
                         </li>
                         <li><a href=\"contact\">Contact</a>
                         </li>
